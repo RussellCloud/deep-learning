@@ -14,6 +14,6 @@ face_generation/data/
 
 */.floyd*
 
-.russellexpt
-.russellignore
+*.russellexpt
+*.russellignore
 

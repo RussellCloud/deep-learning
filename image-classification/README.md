@@ -1,50 +1,60 @@
-## (Optional) Running the Udacity Deep Learning Foundations image classification project on floydhub.com
+## Udacity ND101 - Deep Learning Foundation Nanodegree
 
-You are not required to use FloydHub for this project, but we've provided instructions if you'd like help getting set up.
+本文档的素材来自于 Udacity 纳米学位《机器学习基础》。相关环境已在 RussellCloud 配置完善。帮助用户摆脱繁琐的环境配置，真正专注于课程的学习。通过 RussellCloud 准备的`jupyter notebook`，即刻开启深度学习之旅。
 
-1. Create an account on [floydhub.com](https://www.floydhub.com) (don't forget to confirm your email). Create an individual account on floydhub.com (don't forget to confirm your email). (You won’t be able to finish most projects in the one hour allowed for free trials). Prices for floydhub.com are currently $0.432 / hour of GPU use, and most of your projects will run in around 2 - 3 hours. In order to minimize cost, you may want to try to both debug as much as possible on your local computer and make sure that you end your jobs soon after they finish.
+这些代码从官方的课程链接获取，仅保留了对应的必要文件。数据集也以上传至 RussellCloud 数据集。
 
-2. Install the `floyd` command on your computer:
+## 项目二：第一个神经网络
 
-        pip install -U floyd-cli
-        
-    Do this even if you already installed `floyd-cli` before, just to make sure you have the most recent version (Its pace of development is fast!).
+在本项目中，你将学会对 CIFAR-10 数据集进行分类。该数据集包含了飞机、狗、猫以及其它物体。需要对这些图片进行处理，训练一个卷积网络进行分类。图片需要正则化、标签需要进行 one-hot 编码。
 
-3. Associate the command with your Floyd account:
-
-        floyd login
-
-    (a page with authentication token will open; you will need to copy the token into your terminal)
+通过以下步骤生成你的 `jupyter notebook` 并运行第二个项目：
 
 
-4. Enter the folder for the image classification project:
+### 1. 创建一个 RussellCloud 账户
 
-        cd image-classification
+- 登录 RussellCloud
+- 通过以下两步，安装 Russell客户端:
 
-5. Initiate a Floyd project:
+```
+$ pip install -U russell-cli
 
-        floyd init dlnd_image_classification
+$ russell login
+```
 
-6. Run the project:
+### 2. Clone 项目至本地
 
-        floyd run --data mat_udacity/datasets/udacity-cifar-10/1:cifar --mode jupyter --gpu --env tensorflow-1.2
+```
+$ git clone https://github.com/RussellCloud/deep-learning.git
+$ cd deep-learning/image-classification
+```
 
-    It will be run on a machine with GPU (`--gpu`), using a Tenserflow environment (`--env tensorflow-1.2`), as a Jupyter notebook (`--mode jupyter`), with the cifar-10 dataset available (`--data mat_udacity/datasets/udacity-cifar-10/1:cifar`).
-    
-7. Wait for the Jupyter notebook to become available and then access the URL displayed in the terminal (described as "path to jupyter notebook"). You will see the notebook.
 
-8. Remember to explicitly stop the experiment when you are not using the notebook. As long as it runs (even in the background) it will cost GPU hours. You can stop an experiment in the ["Experiments" section on floyd.com](https://www.floydhub.com/experiments) or using the `floyd stop` command:
+### 3. 在 RussellCloud 上创建项目
 
-        floyd stop ID
- 
-    (where ID is the "RUN ID" displayed in the terminal when you run the project; if you lost it you can also find it in the ["Experiments" section on floyd.com](https://www.floydhub.com/experiments))
-    
-**Important:** When you run a project it will always start from scratch (i.e. from the state present *locally* on your computer). If you made changes in the remote jupiter notebook during a previous run, the changes will **not** be present in subsequent runs. To make them permanent you need to add the changes to your local project folder. When running the notebook you can download them directly from Jupyter - *File / Download / Notebook*. After downloading it, just replace your local `dlnd_image_classification.ipynb` file with the newly downloaded one.
+在 RussellCLoud 上创建名为`image-classification`的项目，环境选择`keras`，然后在本地使用如下指令绑定它：
 
-Alternatively, If you already stoped the experiment, you can still download the file using the `floyd output` command:
+```
+$ russell init image-classification
+```
+### 4. 通过 `jupyter notebook` 运行项目
 
-    floyd output ID
+- `--env` 标志，指定项目的运行环境。本项目需要 Tensorflow 1.2.0 + Keras 2.0.6 + Python 3.5。
+- `--data` 标志，指定数据集ID。
+- `--mode` 标志，是否弹出 `jupyter notebook`。
+- `--gpu` 标志，可选。如果确定代码能够直接运行不用调试，则可以开启GPU加速。否则，建议先用CPU调通代码。
 
-(where ID is the "RUN ID" displayed in the terminal when you run the project; if you lost it you can also find it in the ["Experiments" section on floyd.com](https://www.floydhub.com/experiments))
-    
-Just run the command above, download `dlnd_image_classification.ipynb` and replace your local version with the newly downloaded one.
+```
+russell run \
+  --env keras \
+  --data fd3a1fa0ffd045958c663e4f8c2fc36e:data \
+  --mode jupyter \
+  --gpu
+
+```
+任务一旦开启，`jupyter notebook`将会在你的浏览器打开。接下来就可以你的操作啦～
+
+## 更多关于 RussellCloud 平台
+- 注意，在 RussellCloud 端的改动不会影响本地文件。若想更改本地文件，可将网页端的文件下载下来覆盖。
+- 如果需要帮助，可查看我们的[文档](http://docs.russellcloud.com)，或是参与[论坛](http://forum.russellcloud.com/)讨论。
+

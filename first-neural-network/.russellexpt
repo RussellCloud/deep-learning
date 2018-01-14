@@ -1,1 +1,1 @@
-{"family_id": "JGMZbyR3qX3ebCuJ8uQagL", "version": 4, "name": "first-neural-network", "experiment_predecessor": "b252b0914418450886d0a12ffe4182e0", "module_predecessor": "81afcd622dad4177a44bfd76961866bd", "project_id": "95fde28014af4f0c8ad359369770eb06"}
+{"name": "first-neural-network", "family_id": "JGMZbyR3qX3ebCuJ8uQagL", "project_id": "95fde28014af4f0c8ad359369770eb06", "version": 5, "module_predecessor": "29cc25fcd84945bb9aa256683543d0e1", "experiment_predecessor": "af7a28650f1e4bf3ad4eea790a1446ef"}

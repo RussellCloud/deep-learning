@@ -47,7 +47,7 @@ $ russell init face_generation
 ```
 russell run \
   --env keras \
-  --data c482f8ea6b5442569d9bacf1dc6d7bab:data \
+  --data ID-for-celeba:data \
   --mode jupyter \
   --gpu
 

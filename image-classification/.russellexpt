@@ -1,1 +1,1 @@
-{"name": "image-classification", "module_predecessor": "3c1e011b82084c3893a449f8c89db7cd", "project_id": "47a1efaf64c14f0ca74f95aa86831b5f", "family_id": "xLkRhVfztubbfEhus8epen", "version": 3, "experiment_predecessor": "d7cab93c6ddb4608993ab45b93ef269e"}
+{"version": 4, "family_id": "xLkRhVfztubbfEhus8epen", "name": "image-classification", "module_predecessor": "a989dc9269ef40b4b1cf0b8a9f16022a", "experiment_predecessor": "766f1a29ba134e7a817fe3ecf837558d", "project_id": "47a1efaf64c14f0ca74f95aa86831b5f"}

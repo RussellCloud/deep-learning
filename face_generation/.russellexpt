@@ -1,1 +1,1 @@
-{"experiment_predecessor": "28e4c4140f9b4af58db08a4072b14a40", "version": 2, "project_id": "ea050cce836049618b35d2cf476d64de", "name": "face-generation", "family_id": "WStUnMzJxeZ3Fejw9F6fxR", "module_predecessor": "94e3787c21cb4df5a0231907999735d8"}
+{"name": "face-generation", "module_predecessor": "2d579dcec46240c29511e8428064bc69", "experiment_predecessor": "d4dc27a5c8cc4f3ca39b11c200a5a209", "project_id": "ea050cce836049618b35d2cf476d64de", "version": 3, "family_id": "WStUnMzJxeZ3Fejw9F6fxR"}
